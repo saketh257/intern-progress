@@ -1,0 +1,68 @@
+function:--
+1)def asit_is():
+print("Hello from a function")
+
+asit_is() #we call the unction at last,only then the output will   get printed
+
+#OUTPUT-hello from a function
+
+lambda function:---
+1)y= lambda v : v*10
+print(x(5))
+
+#output-50
+
+ 1)MAP 
+ def cube(x):
+   return x * x * x
+output:-any value of x will be multiplied thrice
+
+
+ 2)FILTER
+ def filter_function(a):
+   return a>2
+  
+ newlist = list(filter(filter_function, l))
+ print(newlist)
+
+ouput:--it will extract the desired value,filter
+
+
+
+global variable----
+1)a = 15
+b = 10
+def add():
+    c = a + b
+    print(c)
+
+add()
+
+output:--25
+
+
+return keyword--
+def returnkaro():
+  return 3+3
+
+print(return())
+
+
+outputt---6
+
+#in return keyword,we will create the function and "return" the values.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
