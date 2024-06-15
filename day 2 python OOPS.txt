@@ -1,0 +1,35 @@
+class Sum:
+    def _init_(self, *args):
+        if len(args) == 0:
+            self.default_constructor()
+        elif len(args) == 2:
+            self.two_param_constructor(args[0], args[1])
+        elif len(args) == 3:
+            self.three_param_constructor(args[0], args[1], args[2])
+        else:
+            raise ValueError("Invalid number of arguments")
+
+    def default_constructor(self):
+        self.a = int(input("Enter a: "))
+        self.b = int(input("Enter b: "))
+        print(f"Sum = {self.a + self.b}")
+
+    def two_param_constructor(self, a, b):
+        self.a = a
+        self.b = b
+        print(f"Sum = {self.a + self.b}")
+
+    def three_param_constructor(self, a, d, e):
+        self.a = a
+        self.d = d
+        self.e = e
+        print(f"Sum = {self.a + self.d + self.e}")
+
+    def _del_(self):
+        print("Destructor called")
+
+# Usage
+if _name_ == "_main_":
+    s1 = Sum()
+    m = Sum(20, 50)
+    n = Sum(3, 3.2, 4.55)
