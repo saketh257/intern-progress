@@ -1,0 +1,28 @@
+#create
+@app.route('/user/<int:user_id>', methods=['GET'])
+def get_user(user_id):
+    user = User.query.get_or_404(user_id)
+    return jsonify({'id': user.id, 'name': user.name})
+
+#read
+app = Flask(_name_)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'your_database_uri_here'
+db = SQLAlchemy(app)
+
+#update
+@app.route('/user/<int:user_id>', methods=['PUT'])
+def update_user(user_id):
+    user = User.query.get_or_404(user_id)
+    data = request.get_json()
+    user.name = data['name']
+    db.session.commit()
+    return jsonify({'message': 'User updated successfully'})
+
+
+#delete
+@app.route('/user/<int:user_id>', methods=['DELETE'])
+def delete_user(user_id):
+    user = User.query.get_or_404(user_id)
+    db.session.delete(user)
+    db.session.commit()
+    return jsonify({'message': 'User deleted successfully'})
